@@ -1,0 +1,1 @@
+initSidebarItems({"type":[["InitialLetter","A specified type for the `initial-letter` property."],["LetterSpacing","A specified value for the `letter-spacing` property."],["LineHeight","A specified value for the `line-height` property."],["WordSpacing","A specified value for the `word-spacing` property."]]});

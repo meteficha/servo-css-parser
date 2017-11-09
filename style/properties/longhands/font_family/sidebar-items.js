@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SpecifiedValue",""]],"fn":[["cascade_property",""],["get_initial_value",""],["parse","<family-name># <family-name> =  | [ + ] TODO: <generic-family>"],["parse_declared",""],["parse_specified",""]],"mod":[["computed_value",""]]});

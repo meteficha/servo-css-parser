@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Atom",""],["EmptyStaticAtomSet",""],["PhfStrSet",""],["StringCacheHeap","A token that represents the heap used by the dynamic string cache."]],"trait":[["StaticAtomSet",""]],"type":[["DefaultAtom","Use this if you don’t care about static atoms."]]});

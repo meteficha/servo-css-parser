@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InvalidationResult","The result of a whole invalidation process for a given element."],["TreeStyleInvalidator","The struct that takes care of encapsulating all the logic on where and how element styles need to be invalidated."]]});

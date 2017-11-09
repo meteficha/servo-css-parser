@@ -1,0 +1,1 @@
+initSidebarItems({"type":[["DirectionVector","A vector to represent the direction vector (rotate axis) for Rotate3D."],["TimingFunction","A computed timing function."],["TransformOrigin","The computed value of a CSS `<transform-origin>`"]]});

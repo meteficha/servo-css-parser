@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `LocalMatchingContext` struct in crate `selectors`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, LocalMatchingContext">
+
+    <title>selectors::matching::LocalMatchingContext - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct LocalMatchingContext</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.shared">shared</a><a href="#structfield.selector">selector</a><a href="#structfield.nesting_level">nesting_level</a><a href="#structfield.hover_active_quirk_disabled">hover_active_quirk_disabled</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.active_hover_quirk_matches">active_hover_quirk_matches</a></div></div><p class='location'><a href='../index.html'>selectors</a>::<wbr><a href='index.html'>matching</a></p><script>window.sidebarCurrent = {name: 'LocalMatchingContext', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>selectors</a>::<wbr><a href='index.html'>matching</a>::<wbr><a class="struct" href=''>LocalMatchingContext</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/selectors/matching.rs.html#57-76' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct LocalMatchingContext&lt;'a, 'b: 'a, Impl:&nbsp;<a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>&gt; {
+    pub shared: &amp;'a mut <a class="struct" href="../../selectors/context/struct.MatchingContext.html" title="struct selectors::context::MatchingContext">MatchingContext</a>&lt;'b&gt;,
+    pub selector: &amp;'a <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;,
+    pub nesting_level: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>,
+    pub hover_active_quirk_disabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
+    // some fields omitted
+}</pre><div class='docblock'><p>Holds per-selector data alongside a pointer to MatchingContext.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.shared" class="structfield small-section-header">
+                           <a href="#structfield.shared" class="anchor field"></a>
+                           <span id="shared.v" class='invisible'>
+                           <code>shared: &amp;'a mut <a class="struct" href="../../selectors/context/struct.MatchingContext.html" title="struct selectors::context::MatchingContext">MatchingContext</a>&lt;'b&gt;</code>
+                           </span></span><div class='docblock'><p>Shared <code>MatchingContext</code>.</p>
+</div><span id="structfield.selector" class="structfield small-section-header">
+                           <a href="#structfield.selector" class="anchor field"></a>
+                           <span id="selector.v" class='invisible'>
+                           <code>selector: &amp;'a <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;</code>
+                           </span></span><div class='docblock'><p>A reference to the base selector we&#39;re matching against.</p>
+</div><span id="structfield.nesting_level" class="structfield small-section-header">
+                           <a href="#structfield.nesting_level" class="anchor field"></a>
+                           <span id="nesting_level.v" class='invisible'>
+                           <code>nesting_level: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code>
+                           </span></span><div class='docblock'><p>The level of nesting for the selector being matched.</p>
+</div><span id="structfield.hover_active_quirk_disabled" class="structfield small-section-header">
+                           <a href="#structfield.hover_active_quirk_disabled" class="anchor field"></a>
+                           <span id="hover_active_quirk_disabled.v" class='invisible'>
+                           <code>hover_active_quirk_disabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code>
+                           </span></span><div class='docblock'><p>Holds a bool flag to see whether :active and :hover quirk should try to
+match or not. This flag can only be true in the case PseudoElements are
+encountered when matching mode is ForStatelessPseudoElement.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a, 'b, Impl&gt; <a class="struct" href="../../selectors/matching/struct.LocalMatchingContext.html" title="struct selectors::matching::LocalMatchingContext">LocalMatchingContext</a>&lt;'a, 'b, Impl&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Impl: <a class="trait" href="../../selectors/parser/trait.SelectorImpl.html" title="trait selectors::parser::SelectorImpl">SelectorImpl</a>,&nbsp;</span></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/matching.rs.html#78-159' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;shared: &amp;'a mut <a class="struct" href="../../selectors/context/struct.MatchingContext.html" title="struct selectors::context::MatchingContext">MatchingContext</a>&lt;'b&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;selector: &amp;'a <a class="struct" href="../../selectors/parser/struct.Selector.html" title="struct selectors::parser::Selector">Selector</a>&lt;Impl&gt;<br>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/matching.rs.html#82-92' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Constructs a new <code>LocalMatchingContext</code>.</p>
+</div><h4 id='method.active_hover_quirk_matches' class="method"><span id='active_hover_quirk_matches.v' class='invisible'><code>pub fn <a href='#method.active_hover_quirk_matches' class='fnname'>active_hover_quirk_matches</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/selectors/matching.rs.html#111-158' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns true if current compound selector matches :active and :hover quirk.
+<a href="https://quirks.spec.whatwg.org/#the-active-and-hover-quirk">https://quirks.spec.whatwg.org/#the-active-and-hover-quirk</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "selectors";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"type":[["VerticalAlign","A computed value for the `vertical-align` property."]]});

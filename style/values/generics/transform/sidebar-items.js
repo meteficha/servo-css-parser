@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["StepPosition",""],["TimingFunction","A generic timing function."],["TimingKeyword",""]],"struct":[["Matrix","A generic 2D transformation matrix."],["TransformOrigin","A generic transform origin."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"type":[["BackgroundSize","A specified value for the `background-size` property."]]});
