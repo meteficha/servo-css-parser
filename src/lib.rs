@@ -39,7 +39,7 @@ pub fn parse(
         media,
         lock,
         None,
-        &RustLogReporter,
+        Some(&RustLogReporter),
         quirks,
         0
     )

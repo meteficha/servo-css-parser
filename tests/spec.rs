@@ -26,7 +26,7 @@ use selectors::parser::{Combinator, Component, Selector, SelectorList};
 use servo_atoms::Atom;
 use servo_css_parser::parse;
 use servo_css_parser::types::{MediaList, Origin, QuirksMode, Url};
-use style::properties::{longhands, DeclarationSource, PropertyDeclaration};
+use style::properties::{longhands, PropertyDeclaration};
 use style::properties::declaration_block::{Importance, PropertyDeclarationBlock};
 use style::servo_arc::Arc;
 use style::stylesheets::{CssRule, CssRules, StyleRule};
@@ -38,7 +38,7 @@ where
 {
     let mut block = PropertyDeclarationBlock::new();
     iterable.into_iter().for_each(|(d, i)| {
-        block.push(d, i, DeclarationSource::CssOm);
+        block.push(d, i);
     });
     block
 }
