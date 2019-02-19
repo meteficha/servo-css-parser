@@ -10,6 +10,7 @@ specific language governing permissions and limitations under the License.
 */
 
 pub extern crate cssparser;
+pub extern crate embedder_traits;
 pub extern crate selectors;
 pub extern crate servo_url;
 pub extern crate style;
