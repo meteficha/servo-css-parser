@@ -10,20 +10,18 @@ matrix:
   include:
     - os: linux # 14.04
       dist: trusty
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-8
-env:
-  - CC=gcc-8
-  - CXX=g++-8
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-8
+      env:
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
 before_install:
   - rustup component add clippy-preview rustfmt-preview
-install:
-  - npm install
 script:
+  - eval "${MATRIX_EVAL}"
   - cargo build
   - cargo test
   - cargo clippy --all-targets --all-features -- -D warnings
