@@ -20,9 +20,14 @@ matrix:
 before_install:
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-8
   - g++ -v
-  - rustup component add clippy-preview rustfmt-preview
+  # Cargo tries to lint all of the path dependencies, so it's disabled for now
+  # https://github.com/rust-lang/rust-clippy/issues/1066
+  # - rustup component add clippy --toolchain=nightly || cargo install --git https://github.com/rust-lang/rust-clippy/ --force clippy
+  - rustup component add rustfmt --toolchain=nightly || cargo install --git https://github.com/rust-lang/rustfmt/ --force clippy
 script:
   - travis_wait 30 cargo build
   - cargo test
-  - cargo clippy --all-targets --all-features -- -D warnings
+  # Cargo tries to lint all of the path dependencies, so it's disabled for now
+  # https://github.com/rust-lang/rust-clippy/issues/1066
+  # - cargo clippy --all-targets --all-features -- -D warnings
   - cargo fmt --all -- --check

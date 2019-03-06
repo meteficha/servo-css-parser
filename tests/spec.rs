@@ -9,8 +9,7 @@ CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License.
 */
 
-#![allow(unknown_lints)]
-#![allow(identity_op)]
+#![allow(clippy::identity_op)]
 
 extern crate cssparser;
 extern crate html5ever;
