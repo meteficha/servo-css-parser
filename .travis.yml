@@ -22,7 +22,7 @@ before_install:
   - g++ -v
   - rustup component add clippy-preview rustfmt-preview
 script:
-  - cargo build
+  - travis_wait 30 cargo build
   - cargo test
   - cargo clippy --all-targets --all-features -- -D warnings
   - cargo fmt --all -- --check
