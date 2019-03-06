@@ -16,12 +16,11 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-8
-      env:
-        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
 before_install:
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+  - g++ -v
   - rustup component add clippy-preview rustfmt-preview
 script:
-  - eval "${MATRIX_EVAL}"
   - cargo build
   - cargo test
   - cargo clippy --all-targets --all-features -- -D warnings
