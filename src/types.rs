@@ -12,5 +12,5 @@ specific language governing permissions and limitations under the License.
 pub use servo_url::ServoUrl as Url;
 pub use style::context::QuirksMode;
 pub use style::media_queries::MediaList;
-pub use style::stylesheets::Stylesheet as ServoStylesheet;
 pub use style::stylesheets::origin::Origin;
+pub use style::stylesheets::Stylesheet as ServoStylesheet;

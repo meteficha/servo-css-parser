@@ -28,7 +28,7 @@ pub fn parse(
     url: types::Url,
     origin: types::Origin,
     quirks: types::QuirksMode,
-    media: types::MediaList
+    media: types::MediaList,
 ) -> types::ServoStylesheet {
     let lock = SharedRwLock::new();
     let media = Arc::new(lock.wrap(media));
@@ -42,6 +42,6 @@ pub fn parse(
         None,
         Some(&RustLogReporter),
         quirks,
-        0
+        0,
     )
 }

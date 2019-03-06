@@ -25,15 +25,15 @@ use selectors::parser::{Combinator, Component, Selector, SelectorList};
 use servo_atoms::Atom;
 use servo_css_parser::parse;
 use servo_css_parser::types::{MediaList, Origin, QuirksMode, Url};
-use style::properties::{longhands, PropertyDeclaration};
 use style::properties::declaration_block::{Importance, PropertyDeclarationBlock};
+use style::properties::{longhands, PropertyDeclaration};
 use style::servo_arc::Arc;
 use style::stylesheets::{CssRule, CssRules, StyleRule};
 use style::values::specified::position::PositionComponent;
 
 pub fn block_from<I>(iterable: I) -> PropertyDeclarationBlock
 where
-    I: IntoIterator<Item = (PropertyDeclaration, Importance)>
+    I: IntoIterator<Item = (PropertyDeclaration, Importance)>,
 {
     let mut block = PropertyDeclarationBlock::new();
     iterable.into_iter().for_each(|(d, i)| {
@@ -130,5 +130,8 @@ fn test_simple() {
         &stylesheet.shared_lock
     );
 
-    assert_eq!(format!("{:#?}", stylesheet.contents.rules), format!("{:#?}", expected));
+    assert_eq!(
+        format!("{:#?}", stylesheet.contents.rules),
+        format!("{:#?}", expected)
+    );
 }
