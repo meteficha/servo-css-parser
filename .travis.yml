@@ -22,8 +22,8 @@ before_install:
   - g++ -v
   # Cargo tries to lint all of the path dependencies, so it's disabled for now
   # https://github.com/rust-lang/rust-clippy/issues/1066
-  # - rustup component add clippy --toolchain=nightly || cargo install --git https://github.com/rust-lang/rust-clippy/ --force clippy
-  - rustup component add rustfmt --toolchain=nightly || cargo install --git https://github.com/rust-lang/rustfmt/ --force clippy
+  # - rustup component add clippy || cargo install --git https://github.com/rust-lang/rust-clippy/ --force clippy
+  - rustup component add rustfmt || cargo install --git https://github.com/rust-lang/rustfmt/ --force rustfmt
 script:
   - travis_wait 30 cargo build
   - cargo test
