@@ -24,6 +24,7 @@ before_install:
   # https://github.com/rust-lang/rust-clippy/issues/1066
   # - rustup component add clippy || cargo install --git https://github.com/rust-lang/rust-clippy/ --force clippy
   - rustup component add rustfmt || cargo install --git https://github.com/rust-lang/rustfmt/ --force rustfmt
+  - cp ./servo/Cargo.lock .
 script:
   - travis_wait 30 cargo build
   - cargo test
