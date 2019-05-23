@@ -15,6 +15,7 @@ pub extern crate selectors;
 pub extern crate servo_url;
 pub extern crate style;
 pub extern crate style_traits;
+pub extern crate servo_config;
 
 pub mod types;
 
