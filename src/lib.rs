@@ -9,13 +9,13 @@ CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License.
 */
 
-pub extern crate cssparser;
-pub extern crate embedder_traits;
-pub extern crate selectors;
-pub extern crate servo_config;
-pub extern crate servo_url;
-pub extern crate style;
-pub extern crate style_traits;
+pub use cssparser;
+pub use embedder_traits;
+pub use selectors;
+pub use servo_config;
+pub use servo_url;
+pub use style;
+pub use style_traits;
 
 pub mod types;
 

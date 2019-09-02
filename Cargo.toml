@@ -2,9 +2,7 @@
 name = "servo-css-parser"
 version = "0.1.0"
 authors = ["Victor Porof <victor.porof@gmail.com>"]
-
-[lib]
-name = "servo_css_parser"
+edition = "2018"
 
 [dependencies]
 cssparser = "0.25.1"

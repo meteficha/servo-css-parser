@@ -11,13 +11,13 @@ specific language governing permissions and limitations under the License.
 
 #![allow(clippy::identity_op)]
 
-extern crate cssparser;
-extern crate html5ever;
-extern crate parking_lot;
-extern crate selectors;
-extern crate servo_atoms;
-extern crate servo_css_parser;
-extern crate style;
+use cssparser;
+use html5ever;
+use parking_lot;
+use selectors;
+use servo_atoms;
+use servo_css_parser;
+use style;
 
 use cssparser::SourceLocation;
 use html5ever::Namespace;
