@@ -30,6 +30,7 @@ use style::properties::{longhands, PropertyDeclaration};
 use style::servo_arc::Arc;
 use style::stylesheets::{CssRule, CssRules, StyleRule};
 use style::values::specified::position::PositionComponent;
+use style::selector_parser::SelectorParser;
 
 pub fn block_from<I>(iterable: I) -> PropertyDeclarationBlock
 where
@@ -55,18 +56,7 @@ fn test_simple() {
     let expected = CssRules::new(
         vec![
             CssRule::Style(Arc::new(stylesheet.shared_lock.wrap(StyleRule {
-                selectors: SelectorList::from_vec(vec![
-                    Selector::from_vec(
-                        vec![
-                            Component::DefaultNamespace(Namespace::from("http://www.w3.org/1999/xhtml")),
-                            Component::ID(Atom::from("someId")),
-                            Component::Combinator(Combinator::Child),
-                            Component::DefaultNamespace(Namespace::from("http://www.w3.org/1999/xhtml")),
-                            Component::Class(Atom::from("someClass")),
-                        ],
-                        (1 << 20) + (1 << 10) + (0 << 0)
-                    ),
-                ]),
+                selectors: SelectorParser::parse_author_origin_no_namespace("#someId > .someClass").unwrap(),
                 block: Arc::new(stylesheet.shared_lock.wrap(block_from(vec![
                     (
                         PropertyDeclaration::BackgroundColor(longhands::background_color::SpecifiedValue::Numeric {
@@ -78,49 +68,49 @@ fn test_simple() {
                     (
                         PropertyDeclaration::BackgroundPositionX(longhands::background_position_x::SpecifiedValue(vec![
                             PositionComponent::zero(),
-                        ])),
+                        ].into())),
                         Importance::Normal
                     ),
                     (
                         PropertyDeclaration::BackgroundPositionY(longhands::background_position_y::SpecifiedValue(vec![
                             PositionComponent::zero(),
-                        ])),
+                        ].into())),
                         Importance::Normal
                     ),
                     (
                         PropertyDeclaration::BackgroundRepeat(longhands::background_repeat::SpecifiedValue(vec![
                             longhands::background_repeat::single_value::get_initial_specified_value(),
-                        ])),
+                        ].into())),
                         Importance::Normal
                     ),
                     (
                         PropertyDeclaration::BackgroundAttachment(longhands::background_attachment::SpecifiedValue(vec![
                             longhands::background_attachment::single_value::get_initial_specified_value(),
-                        ])),
+                        ].into())),
                         Importance::Normal
                     ),
                     (
                         PropertyDeclaration::BackgroundImage(longhands::background_image::SpecifiedValue(vec![
                             longhands::background_image::single_value::get_initial_specified_value(),
-                        ])),
+                        ].into())),
                         Importance::Normal
                     ),
                     (
                         PropertyDeclaration::BackgroundSize(longhands::background_size::SpecifiedValue(vec![
                             longhands::background_size::single_value::get_initial_specified_value(),
-                        ])),
+                        ].into())),
                         Importance::Normal
                     ),
                     (
                         PropertyDeclaration::BackgroundOrigin(longhands::background_origin::SpecifiedValue(vec![
                             longhands::background_origin::single_value::get_initial_specified_value(),
-                        ])),
+                        ].into())),
                         Importance::Normal
                     ),
                     (
                         PropertyDeclaration::BackgroundClip(longhands::background_clip::SpecifiedValue(vec![
                             longhands::background_clip::single_value::get_initial_specified_value(),
-                        ])),
+                        ].into())),
                         Importance::Normal
                     ),
                 ]))),
