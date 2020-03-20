@@ -5,8 +5,8 @@ authors = ["Victor Porof <victor.porof@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-cssparser = "0.25.1"
-selectors = { path = "servo/components/selectors", version = "0.21.0" }
+cssparser = "0.27.1"
+selectors = { path = "servo/components/selectors", version = "0.22.0" }
 servo_url = { path = "servo/components/url", version = "0.0.1" }
 style = { path = "servo/components/style", version = "0.0.1", features = ["servo", "servo-layout-2013"] }
 style_traits = { path = "servo/components/style_traits", version = "0.0.1", features = ["servo"] }
@@ -14,6 +14,6 @@ embedder_traits = { path = "servo/components/embedder_traits", version = "0.0.1"
 servo_config = { path = "servo/components/config", version = "0.0.1" }
 
 [dev-dependencies]
-html5ever = "0.22"
-parking_lot = "0.4"
+html5ever = "0.22.5"
+parking_lot = "0.4.8"
 servo_atoms = { path = "servo/components/atoms", version = "0.0.1" }
